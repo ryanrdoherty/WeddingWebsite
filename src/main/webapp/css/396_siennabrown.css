@@ -1,0 +1,192 @@
+/*style_rules
+email_line_color #bf2e1a
+email_text_color #885600
+email_link_color #bf2e1a
+email_border_color #bf2e1a
+home_photo_max_width 400 x 300
+*/
+* { margin: 0; padding: 0; }
+
+/* Set background color and any image for entire site */
+body { margin: 0px; font-family: georgia, arial, sans-serif; font-size: 14px; color: #885600; text-align: center; background-position: top; background: url('../images/396_bg_siennabrown.jpg'); background-repeat: no-repeat; background-position: top; background-color: #f99d32; }
+
+p { color: #885600; }
+
+/* Set links for template */
+a { color: #bf2e1a; }
+
+a:visited { color: #bf2e1a; }
+
+a:hover { color: #bf2e1a; }
+
+small { font-size: 9pt; margin-top: 1.5%; margin-bottom: 1.5%; }
+
+/*=================================================================*/
+/*Polaroid border and drop shadow style for photos*/
+.c-photo img { background: #885600; padding: 1px 1px 1px 1px; border: 2px solid #885600; border-width: 0 0px 0px 0; }
+
+/*=================================================================*/
+/* Content Area images and color */
+/* background image and background color */
+/* background color is always behind image */
+#t-container { position: relative; width: 1014px; margin: 0 auto; text-align: left; background: url('../images/396_m_1px_siennabrown.jpg') repeat-y; }
+
+/*=================================================================*/
+/*t-center is the larger container that holds t-links and t-content*/
+/*t-links holds the menu nav, and t-content holds page content*/
+#t-center { position: relative; background: url('../images/396_m_siennabrown.jpg') no-repeat; min-height: 600px; _height: 600px; }
+
+/* customize menu links */
+#t-links { padding-left: 57px; padding-top: 12px; font-size: 13px; width: 135px; display: block; margin: 0; }
+
+#t-links ul { margin: 0; list-style-type: none; color: #bf2e1a; }
+
+#t-links li { margin-top: 10px; margin-bottom: 10px; }
+
+#t-links a { color: #bf2e1a; font-size: 14px; text-decoration: none; font-weight: normal; }
+
+#t-link a:visited { color: #bf2e1a; font-size: 14px; text-decoration: none; font-weight: bold; }
+
+#t-link a:hover { color: #bf2e1a; font-size: 14px; text-decoration: none; font-weight: bold; }
+
+/* Set middle image */
+#t-content { margin: 0 50px 0 225px; padding-top: 15px; padding-bottom: 20px; }
+
+/* the content text */
+.c-form { font-family: georgia, arial, sans-serif; font-size: 14px; line-height: 22px; color: #885600; text-align: left; }
+
+.c-text { font-family: georgia, arial, sans-serif; font-size: 14px; line-height: 20px; color: #885600; text-align: left; }
+
+.c-info { font-family: georgia, arial, sans-serif; font-size: 14px; color: #885600; text-align: left; line-height: 21px; }
+
+.c-date { font-family: georgia, arial, sans-serif; font-size: 16px; color: #885600; text-align: left; font-weight: bold; line-height: 26px; }
+
+#c-countdown-days { font-family: georgia, arial, sans-serif; font-size: 14px; color: #bf2e1a; text-align: left; font-weight: bold; line-height: 30px; }
+
+#c-countdown-text { font-family: georgia, arial, sans-serif; font-size: 14px; color: #bf2e1a; text-align: left; font-weight: bold; line-height: 30px; }
+
+.c-odd,
+.c-even { margin: 30px 0; /* 30px top and bottom, no margin left and right */ }
+
+.c-intro { color: #885600; }
+
+/* Photo Gallery Styles Start */
+/*space for gallery photo - should remain at 214 */
+#c-galleries-container .c-photo { width: 214px; padding-bottom: 0px; }
+
+/*spaces gallery description from it's title */
+#c-galleries-container .c-text { padding-top: 0px; }
+
+/*title link for gallery name */
+#c-galleries-container .c-subtitle { left: 241px; padding-top: 0px; }
+
+/*backgrounds for galleries odd */
+#c-galleries-container .c-odd { background-color: transparent; padding: 15px 0px 0px 15px; margin-bottom: 15px; margin-top: 15px; }
+
+/*backgrounds for galleries even */
+#c-galleries-container .c-even { background-color: transparent; padding: 15px 0px 0px 15px; margin-bottom: 15px; margin-top: 15px; }
+
+/* display of thumbnails inside gallery */
+#c-photo-list .c-photo { width: 214px; height: 214px; }
+
+/* padding to manually center thumbnails in content region */
+#c-photo-list { margin-left: 50px; }
+
+/* background color for individual thumbnails in a gallery */
+#c-photo-list .c-odd{ background-color: transparent; margin-right: 10px; margin-bottom: 10px; }
+
+/* background color for individual thumbnails in a gallery */
+#c-photo-list .c-even{ background-color: transparent; margin-bottom: 10px; }
+
+/* background color for individual large detail images */
+#c-photo-container { background-color: transparent; padding: 10px 10px 10px 10px; }
+
+/* background color for individual large detail images */
+#c-photo-container .c-even { text-align: center; }
+
+/* buttons for large image viewer - back to gallery */
+.c-page-up { margin-right: 10px; }
+
+/* buttons for large image viewer - next */
+.c-page-next { border: solid #885600 1px; padding: 3px 3px 4px 4px; background-color: transparent; margin-right: 121px; text-align: center; }
+
+/* buttons for large image viewer - previous */
+.c-page-previous { border: solid #885600 1px; padding: 3px 3px 4px 4px; margin-right: 8px; background-color: transparent; text-align: center; }
+
+/* background color for individual large detail images */
+#c-photo-container .c-text { margin-left: 10px; margin-right: 10px; }
+
+/* Photo Gallery Styles End */
+
+/* align photos with text on our story and wedding party */
+#c-party-container .c-photo { float: left; padding: 10px 10px 0 0; }
+#c-story-container .c-photo { float: right; padding: 10px 0 0 10px; }
+
+/* Headings */
+h3 { font-family: georgia, arial, sans-serif; font-size: 22px; color: #885600; text-align: left; /*margin-top : 1.5%;*/ margin-bottom: 2.0%; text-decoration: none; font-weight: lighter; }
+
+h4 { font-family: georgia, arial, sans-serif; font-size: 19px; color: #bf2e1a; text-align: left; margin-top: 1.5%; margin-bottom: 1.5%; line-height: 21px; text-decoration: none; font-weight: lighter; }
+
+h5 { font-family: georgia, arial, sans-serif; font-size: 15px; color: #885600; text-align: left; margin-top: 1.5%; margin-bottom: 1.5%; line-height: 21px; text-decoration: none; }
+
+/*===================================================================*/
+/* Set styles for form elements and buttons */
+ 
+.c-form .c-input-text { font-size: 13px; color: #000000; }
+
+ 
+.c-buttons input {
+        border: 1px solid #bf2e1a;
+        background-color: #885600;
+        color: #ffffff;
+        font-family: georgia, arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 6px;
+}
+
+
+.c-buttons input:hover {
+        background-color: #bf2e1a;
+}
+
+
+.c-buttons input:active {
+        background-color: #000;
+}
+/*===================================================================*/
+/* Set footer image */
+#t-footer { padding-top: 10px; height: 129px; padding-bottom: 10px; padding-left: 0px; background: url('../images/396_f_siennabrown.jpg') no-repeat left top; text-align: center; color: #885600; line-height: 11px; font-size: 11px; }
+
+#t-footer a { color: #885600; font-size: 11px; }
+
+#t-footer a:visited { color: #885600; font-size: 11px; }
+
+#t-footer a:hover { color: #885600; font-size: 11px; }
+
+#t-footer a.invite-link {
+  font-size: 14px;
+  text-decoration: none;
+}
+#t-footer a.invite-link:visited {
+	font-size: 14px;
+  text-decoration: none;
+}
+#t-footer a.invite-link:hover {
+	font-size: 14px;
+  text-decoration: underline;
+}
+
+#t-footer a.invite-link-large {
+	position: relative;
+  font-size: 24px;
+  text-decoration: none;
+}
+#t-footer a.invite-link-large:visited {
+  font-size: 24px;
+  text-decoration: none;
+}
+#t-footer a.invite-link-large:hover {
+	font-size: 24px;
+  text-decoration: underline;
+}

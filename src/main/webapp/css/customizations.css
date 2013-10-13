@@ -1,0 +1,68 @@
+#t-header a span {
+  display: inline-block;
+  position: absolute;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  left: 50px; /* will override on homepage */
+  font-family: "Times New Roman", serif;
+  font-size: 12pt;
+  font-style: normal;
+  text-decoration: none;
+}
+#t-header a:link {
+  font-style: normal;
+  text-decoration: none;
+}
+#t-header a:visited {
+  font-style: normal;
+  text-decoration: none;
+}
+#t-header a:hover {
+  text-decoration: underline;
+  /* font-style: italic; */
+  /* font-weight: bold; */
+}
+#menu-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1014px;
+  background: url('../images/396_m_1px_siennabrown.jpg') repeat-y;
+}
+#menu-container a span {
+  display: inline-block;
+  position: absolute;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  left: 50px; /* will override on homepage */
+  font-family: "Times New Roman", serif;
+  font-size: 12pt;
+  font-style: normal;
+  text-decoration: none;
+}
+#menu-container a:link {
+  font-style: normal;
+  text-decoration: none;
+}
+#menu-container a:visited {
+  font-style: normal;
+  text-decoration: none;
+}
+#menu-container a span:hover {
+  font-style: italic;
+  /* font-weight: bold; */
+}
+.content-pane {
+	/*border: 1px black solid;*/
+	margin-left: 30px;
+	margin-top: 20px;
+	width: 700px;
+}
+.min-height-div {
+  /*border: solid 1px blue;*/
+  min-height: 380px;
+  height: auto !important;
+  height: 380px;
+  margin-left: 184px;
+}

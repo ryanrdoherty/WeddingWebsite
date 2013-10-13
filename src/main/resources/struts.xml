@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+  <constant name="struts.devMode" value="true" />
+  <constant name="struts.multipart.maxSize" value="8388608" />
+
+	<package name="weddingPkg" extends="struts-default">
+
+    <global-results>
+      <result name="authenticate">/WEB-INF/jsp/auth.jsp</result>
+      <result name="permissionDenied">/WEB-INF/jsp/gen/permissionDenied.jsp</result>
+      <result name="unhandledException">/WEB-INF/jsp/gen/error.jsp</result>
+    </global-results>
+
+    <global-exception-mappings>
+      <exception-mapping exception="java.lang.Exception" result="unhandledException" />
+    </global-exception-mappings>
+    
+    <!-- Used to point to the start page of the application -->
+    <action name="Index">
+      <result type="redirectAction">Authenticate</result>
+    </action>
+    
+    <action name="Authenticate" class="com.mrfeelings.actions.LoginAction">
+      <result name="authenticate">/WEB-INF/jsp/auth.jsp</result>
+      <result name="success" type="redirectAction">Home</result>
+      <result name="redirect">/WEB-INF/jsp/gen/redirect.jsp</result>
+    </action>
+
+    <action name="Invitation" class="com.mrfeelings.actions.InvitationAction">
+      <result name="success">/WEB-INF/jsp/invitation.jsp</result>
+    </action>
+    
+    <action name="Home" class="com.mrfeelings.actions.HomeAction">
+      <result name="success">/WEB-INF/jsp/home.jsp</result>
+    </action>
+
+    <action name="Ceremony" class="com.mrfeelings.actions.content.CeremonyAction">
+      <result name="success">/WEB-INF/jsp/contentPage.jsp</result>
+    </action>
+    
+    <action name="Schedule" class="com.mrfeelings.actions.content.ScheduleAction">
+      <result name="success">/WEB-INF/jsp/contentPage.jsp</result>
+    </action>
+    
+    <action name="Accommodations" class="com.mrfeelings.actions.content.HotelsAction">
+      <result name="success">/WEB-INF/jsp/contentPage.jsp</result>
+    </action>
+    
+    <action name="Attractions" class="com.mrfeelings.actions.content.AttractionsAction">
+      <result name="success">/WEB-INF/jsp/contentPage.jsp</result>
+    </action>
+    
+    <action name="Story" class="com.mrfeelings.actions.content.StoryAction">
+      <result name="success">/WEB-INF/jsp/contentPage.jsp</result>
+    </action>
+    
+    <action name="Photos" class="com.mrfeelings.actions.content.PhotosAction">
+      <result name="success">/WEB-INF/jsp/contentPage.jsp</result>
+    </action>
+    
+    <action name="Registry" class="com.mrfeelings.actions.RegistryAction">
+      <result name="success">/WEB-INF/jsp/gen/redirect.jsp</result>
+    </action>
+    
+    <action name="Logout" class="com.mrfeelings.actions.LogoutAction">
+      <result name="success" type="redirectAction">Index</result>
+    </action>
+    
+    <action name="Thanks" class="com.mrfeelings.actions.ThanksAction">
+      <result name="success">/WEB-INF/jsp/thanks.jsp</result>
+    </action>
+
+    <action name="Guestbook" class="com.mrfeelings.actions.GuestbookAction">
+      <result name="success">/WEB-INF/jsp/guestbook.jsp</result>
+    </action>
+    
+    <action name="RsvpUpdate" class="com.mrfeelings.actions.edit.RsvpUpdateAction">
+      <result name="success" type="redirectAction">Guestbook</result>
+    </action>
+    
+    <action name="GuestbookPost" class="com.mrfeelings.actions.edit.GuestbookPostAction">
+      <result name="success" type="redirectAction">Guestbook</result>
+    </action>
+        
+    <action name="Music" class="com.mrfeelings.actions.MusicAction">
+      <result name="success">/WEB-INF/jsp/construction.jsp</result>
+    </action>
+    
+    <action name="MusicUpdate" class="com.mrfeelings.actions.edit.MusicUpdateAction">
+      <result name="success" type="redirectAction">Music</result>
+    </action>
+    
+    <action name="Contact" class="com.mrfeelings.actions.ContactAction">
+      <result name="success">/WEB-INF/jsp/contact.jsp</result>
+    </action>
+    
+    <action name="ContactUpdate" class="com.mrfeelings.actions.edit.ContactUpdateAction">
+      <result name="success" type="redirectAction">Contact</result>
+    </action>
+    
+    <action name="Edit">
+      <result>/WEB-INF/jsp/edit.jsp</result>
+    </action>
+    
+    <action name="EditContent" class="com.mrfeelings.actions.admin.ContentEditAction">
+      <result name="success">/WEB-INF/jsp/editContent.jsp</result>
+    </action>
+    
+    <action name="ContentUpdate" class="com.mrfeelings.actions.admin.ContentUpdateAction">
+      <result name="success" type="redirectAction">Edit</result>
+    </action>
+    
+    <action name="Users" class="com.mrfeelings.actions.admin.ShowUsersAction">
+      <result name="success">/WEB-INF/jsp/showUsers.jsp</result>
+    </action>
+    
+    <action name="ViewUser" class="com.mrfeelings.actions.admin.ShowUserAction">
+      <result name="success">/WEB-INF/jsp/userEdit.jsp</result>
+    </action>
+    
+    <action name="UpdateUser" class="com.mrfeelings.actions.admin.UpdateUserAction">
+      <result name="success" type="redirectAction">Users</result>
+    </action>
+    
+    <action name="ViewUserStats" class="com.mrfeelings.actions.admin.UserStatsAction">
+      <result name="success">/WEB-INF/jsp/userStats.jsp</result>
+    </action>
+    
+    <action name="EditPhotos" class="com.mrfeelings.actions.admin.ShowPhotosAction">
+      <result name="success">/WEB-INF/jsp/showPhotos.jsp</result>
+    </action>
+    
+    <action name="UploadPhoto" class="com.mrfeelings.actions.admin.UploadPhotoAction">
+      <result name="success" type="redirectAction">EditPhotos</result>
+    </action>
+    
+    <action name="ExportUsers" class="com.mrfeelings.actions.admin.ExportUsersAction">
+      <result name="success" type="stream">
+        <param name="contentType">application/x-excel</param>
+        <param name="inputName">excelStream</param>
+        <param name="contentDisposition">attachment; filename="${filename}"</param>
+        <param name="bufferSize">1024</param>
+      </result>
+    </action>
+    
+    <!-- commented out to avoid accidental upload -->
+    <!--
+    <action name="UploadUsers" class="com.mrfeelings.actions.admin.UploadUsersAction">
+      <result name="success">/WEB-INF/jsp/uploadUsers.jsp</result>
+    </action>
+    -->
+    
+	</package>
+</struts>

@@ -1,0 +1,20 @@
+.user-table th {
+  background-color: lightblue;
+}
+.user-table tr.reply-yes td {
+	background-color: lightgreen;
+}
+.user-table tr.reply-no td {
+	background-color: lightpink;
+}
+
+.summary-table {
+	border: 1px solid black;
+}
+.summary-table th {
+	background-color: lightblue;
+	text-align: left;
+}
+.summary-table td {
+	text-align: center;
+}
