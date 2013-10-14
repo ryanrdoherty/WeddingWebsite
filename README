@@ -1,0 +1,138 @@
+
+-----------------------------------------------------
+Description
+-----------------------------------------------------
+
+This project was originally created during 2011 to support my own
+wedding.  The site is still up and running at mrfeelings.com/wedding.
+To use this software yourself, you will need to decide on and create
+your own look and feel, and make a number of other cosmetic changes;
+however, the functionality is relatively configurable, and individual
+page content is editable by anyone (i.e. your spouse) with some basic
+HTML/CSS knowledge.
+
+
+-----------------------------------------------------
+Prerequisites
+-----------------------------------------------------
+
+UNIX-like OS
+
+Tested on MacOSX and Linux.  No idea what would happen on Windows.
+
+Java
+
+You will need to install Java.  I've added a few Java 7 features in
+the codebase, so I recommend the latest version of Java 7 or greater.
+
+Maven
+
+To build this application, you will need to install Maven 3+.
+
+Database
+
+This site requires a RDBMS backend that you will have to install
+yourself.  I recommend PostgreSQL, for which the site has been tested
+up to version 9.  Instructions below assume Postgres.  If you use a
+different vendor, you probably need to change your Hibernate dialect
+in persistence.xml, in ScriptCreator.java if you use it to generate
+your DDL, and may need to make changes SQL or other code.  If you do
+this, feel free to let me know what you had to do.
+
+Servlet Container
+
+I have only tested this in Tomcat 6 and 7.  Instructions below assume
+Tomcat, but you may also have luck with Jetty or another container.
+
+Broswer Compatibility
+
+The site currently uses jQuery 1.4, which is pretty out of date.
+Unfortunately I am not a JavaScript expert and cannot very well
+predict browser compatibility issues.  Things seemed to be working
+and looking decent in modern browsers as of ~2012.
+
+
+-----------------------------------------------------
+Installation
+-----------------------------------------------------
+
+Once you have installed Java, Maven, Postgres, and Tomcat, you are
+ready to configure and install the code.  You can easily clone
+the main project from GitHub by running:
+
+> git clone https://github.com/ryanrdoherty/WeddingWebsite
+
+The main configuration file is hopefully self-explanatory and exists
+inside the project at ./src/main/resources/config.properties.
+
+Once you've set these values, you build the project with the
+"mvn package" command.  Deploy the resulting WAR to Tomcat:
+
+> cp <install_dir>/target/wedding.war <catalina_home>/webapps
+
+
+Database Configuration
+
+You must create the database schema for this application.  Start
+by creating a user and database in postgres (change password as you
+see fit):
+
+> psql -U postgres
+password:
+psql (9.0.13, server 9.2.4)
+Type "help" for help.
+
+postgres=# create user wedding with password 'myWeddingPassword';
+CREATE ROLE
+postgres=# create database wedding owner wedding;
+CREATE DATABASE
+postgres=# \q
+
+You also must build the schema the application needs.  A script to
+do this in Postgres is available at ./src/main/sql/setup.sql.
+
+> psql -d wedding -U wedding --single-transaction -v ON_ERROR_STOP=1 -f <install_dir>/src/main/sql/setup.sql
+
+Let me know if you have errors.  If you don't see any, then a
+user should exist on the site with passcode 'adminpasscode'.  You
+should probably change this once the site is up.
+
+
+Tomcat Configuration
+
+Tomcat must be configured with your database so the code can find
+it under the JNDI name "WeddingDS".  Here is an example of what to
+put into Tomcat's context.xml (inside the <context>) to accomplish
+this:
+
+<Resource name="jdbc/WeddingDS"
+          auth="Container"
+          type="javax.sql.DataSource"
+          username="wedding"
+          password="myWeddingPassword"
+          driverClassName="org.postgresql.Driver"
+          url="jdbc:postgresql://127.0.0.1:5432/wedding"/>
+
+
+Security
+
+This is potentially optional.  I don't know all that much about
+networking security but I believe the following will close your
+database instance to only receive requests from localhost, and
+always require a password for those requests.  Open
+/var/lib/pgsql/data/pg_hba.conf and make sure it contains only:
+
+local   all         postgres                          ident
+local   all         all                               password
+host    all         all         127.0.0.1/32          password
+host    all         all         ::1/128               md5
+
+You can restart Postgres to enable any changes by running (on
+Linux, with Postgres 8.4):
+
+> /etc/init.d/postgresql-8.4 restart
+
+
+Done!
+
+That it! Restart Tomcat and hopefully the site will come up!
