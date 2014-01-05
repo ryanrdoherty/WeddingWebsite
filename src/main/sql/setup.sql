@@ -18,9 +18,11 @@ CREATE TABLE PAGE_VIEWS
   );
 
 -- Note this table is not used but is required for a JPA native query
-CREATE TABLE PageStat
+CREATE TABLE PAGE_STAT
   (
-    page int4 NOT NULL, numViews int4, PRIMARY KEY (page)
+    PAGE VARCHAR(255) NOT NULL,
+    NUMVIEWS int4,
+    PRIMARY KEY (PAGE)
   );
 
 CREATE TABLE WEDDING_USER

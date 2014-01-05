@@ -3,15 +3,19 @@ package com.mrfeelings.db.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityResult;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FieldResult;
 import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.SqlResultSetMapping;
+import javax.persistence.Table;
 
 import com.mrfeelings.db.enums.Page;
 
 @Entity
+@Table(name="PAGE_STAT")
 @SqlResultSetMapping(name="PageStatResults", entities={
   @EntityResult(entityClass=PageStat.class, fields={
     @FieldResult(name="page", column="page"),
@@ -39,6 +43,7 @@ public class PageStat {
   private PageStat() { }
 
   @Id
+  @Enumerated(EnumType.STRING)
   @Column
   public Page getPage() {
     return _page;

@@ -18,6 +18,7 @@ import javax.persistence.Transient;
 
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
+import org.hibernate.annotations.Type;
 
 
 import edu.upenn.bbl.common.jpa.Identifiable;
@@ -79,6 +80,7 @@ public class GuestbookEntry implements Identifiable {
   
   @Column(name="MESSAGE")
   @Lob
+  @Type(type="org.hibernate.type.StringClobType")
   public String getMessage() {
     return _message;
   }
