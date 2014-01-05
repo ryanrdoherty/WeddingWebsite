@@ -36,15 +36,15 @@ yourself.  I recommend PostgreSQL, for which the site has been tested
 up to version 9.  Instructions below assume Postgres.  If you use a
 different vendor, you probably need to change your Hibernate dialect
 in persistence.xml, in ScriptCreator.java if you use it to generate
-your DDL, and may need to make changes SQL or other code.  If you do
-this, feel free to let me know what you had to do.
+your DDL, and may need to make changes to SQL or other code.  If you
+do this, feel free to let me know what you had to do.
 
 Servlet Container
 
 I have only tested this in Tomcat 6 and 7.  Instructions below assume
 Tomcat, but you may also have luck with Jetty or another container.
 
-Broswer Compatibility
+Browser Compatibility
 
 The site currently uses jQuery 1.4, which is pretty out of date.
 Unfortunately I am not a JavaScript expert and cannot very well
@@ -74,7 +74,7 @@ Once you've set these values, you build the project with the
 Database Configuration
 
 You must create the database schema for this application.  Start
-by creating a user and database in postgres (change password as you
+by creating a user and database in Postgres (change password as you
 see fit):
 
 > psql -U postgres
@@ -95,14 +95,15 @@ do this in Postgres is available at ./src/main/sql/setup.sql.
 
 Let me know if you have errors.  If you don't see any, then a
 user should exist on the site with passcode 'adminpasscode'.  You
-should probably change this once the site is up.
+should probably change this once the site is up (this can be done
+through the site).
 
 
 Tomcat Configuration
 
 Tomcat must be configured with your database so the code can find
-it under the JNDI name "WeddingDS".  Here is an example of what to
-put into Tomcat's context.xml (inside the <context>) to accomplish
+it under the JNDI name "jdbc/WeddingDS".  Here is an example of what to
+put into Tomcat's context.xml (inside the <context> tag) to accomplish
 this:
 
 <Resource name="jdbc/WeddingDS"
@@ -127,10 +128,13 @@ local   all         all                               password
 host    all         all         127.0.0.1/32          password
 host    all         all         ::1/128               md5
 
-You can restart Postgres to enable any changes by running (on
-Linux, with Postgres 8.4):
+You can restart Postgres to apply any changes to this file by
+running (on Linux, with Postgres 8.4):
 
 > /etc/init.d/postgresql-8.4 restart
+
+Note: Notice I mix Postgres versions a lot in the above text.  Check
+the appropriate paths, etc. exist before running commands.
 
 
 Done!
