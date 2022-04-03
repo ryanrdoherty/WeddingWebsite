@@ -2,10 +2,10 @@ package com.mrfeelings.actions;
 
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.struts2.interceptor.SessionAware;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.mrfeelings.actions.base.WeddingAction;
 import com.mrfeelings.db.ContentRetriever;
@@ -18,7 +18,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
   
   private static final long serialVersionUID = 1L;
 
-  private static final Logger LOG = LoggerFactory.getLogger(LoginAction.class.getName());
+  private static final Logger LOG = LogManager.getLogger(LoginAction.class);
   
   public static final String USER_ID_KEY = "uidKey";
   public static final String REDIRECT = "redirect";

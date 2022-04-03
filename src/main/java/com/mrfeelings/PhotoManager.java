@@ -6,15 +6,15 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.mrfeelings.Config.PropKey;
 import com.mrfeelings.db.DataException;
 
 public class PhotoManager {
 
-  private static final Logger LOG = LoggerFactory.getLogger(PhotoManager.class.getName());
+  private static final Logger LOG = LogManager.getLogger(PhotoManager.class);
   
   public static synchronized List<String> getImageNames() throws DataException {
     String imagesDir = Config.getValue(PropKey.imagesDir);

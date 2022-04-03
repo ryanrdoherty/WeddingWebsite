@@ -16,12 +16,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
-import org.apache.commons.lang.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.hibernate.annotations.Type;
 
 
-import edu.upenn.bbl.common.jpa.Identifiable;
+import org.conical.common.bbl.jpa.Identifiable;
 
 @Entity
 @Table(name="GUESTBOOK")

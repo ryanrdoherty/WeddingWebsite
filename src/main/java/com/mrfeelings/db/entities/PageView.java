@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
 
 import com.mrfeelings.db.enums.Page;
 
-import edu.upenn.bbl.common.jpa.Identifiable;
+import org.conical.common.bbl.jpa.Identifiable;
 
 @Entity
 @Table(name="PAGE_VIEWS")

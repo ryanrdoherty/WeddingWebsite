@@ -1,7 +1,7 @@
 package com.mrfeelings.actions.admin;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.mrfeelings.actions.base.WeddingAdminAction;
 import com.mrfeelings.db.ContentRetriever;
@@ -12,7 +12,7 @@ public class ShowUserAction extends WeddingAdminAction {
 
   private static final long serialVersionUID = 1L;
 
-  private static final Logger LOG = LoggerFactory.getLogger(ShowUserAction.class.getName());
+  private static final Logger LOG = LogManager.getLogger(ShowUserAction.class);
   
   private Long _id;
   private User _user;

@@ -5,8 +5,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.conical.common.bbl.enums.State;
 
 import com.mrfeelings.Config;
 import com.mrfeelings.Config.PropKey;
@@ -15,8 +15,6 @@ import com.mrfeelings.db.WeddingDataManager;
 import com.mrfeelings.db.WeddingDbWorker;
 import com.mrfeelings.db.entities.User;
 import com.mrfeelings.db.enums.Page;
-
-import edu.upenn.bbl.common.enums.State;
 
 public class UploadUsersAction extends WeddingAdminAction {
 
@@ -28,9 +26,7 @@ public class UploadUsersAction extends WeddingAdminAction {
   
   @Override
   protected String doWork() throws Exception {
-    BufferedReader br = null;
-    try {
-      br = new BufferedReader(new FileReader(Config.getValue(PropKey.userDataFile)));
+    try (BufferedReader br = new BufferedReader(new FileReader(Config.getValue(PropKey.userDataFile)))) {
       if (br.ready()) br.readLine(); // header
       while (br.ready()) {
         String line = br.readLine();
@@ -55,9 +51,6 @@ public class UploadUsersAction extends WeddingAdminAction {
         }.doWork();
       }
       return SUCCESS;
-    }
-    finally {
-      IOUtils.closeQuietly(br);
     }
   }
 

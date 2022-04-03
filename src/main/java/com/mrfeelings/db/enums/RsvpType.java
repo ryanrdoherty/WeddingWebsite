@@ -1,7 +1,7 @@
 package com.mrfeelings.db.enums;
 
-import edu.upenn.bbl.common.enums.ifc.Described;
-import edu.upenn.bbl.common.enums.ifc.Named;
+import org.conical.common.bbl.enums.ifc.Described;
+import org.conical.common.bbl.enums.ifc.Named;
 
 public enum RsvpType implements Named, Described {
   UNKNOWN ("Undecided"),

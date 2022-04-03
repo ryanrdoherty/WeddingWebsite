@@ -6,6 +6,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -17,9 +19,11 @@ import com.mrfeelings.db.enums.Page;
 import com.mrfeelings.db.enums.RsvpType;
 import com.opensymphony.xwork2.ActionSupport;
 
-import edu.upenn.bbl.common.enums.State;
+import org.conical.common.bbl.enums.State;
 
 public abstract class WeddingAction extends ActionSupport implements SessionAware, ServletRequestAware {
+
+  private static final Logger LOG = LogManager.getLogger(WeddingAction.class);
 
   private static final long serialVersionUID = 1L;
 

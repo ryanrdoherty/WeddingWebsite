@@ -2,9 +2,9 @@ package com.mrfeelings.actions.edit;
 
 import java.util.Date;
 
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.mrfeelings.Config;
 import com.mrfeelings.MailUtil;
@@ -21,7 +21,7 @@ public class GuestbookPostAction extends WeddingAction {
 
   private static final long serialVersionUID = 1L;
 
-  private static final Logger LOG = LoggerFactory.getLogger(GuestbookPostAction.class.getName());
+  private static final Logger LOG = LogManager.getLogger(GuestbookPostAction.class.getName());
   
   private GuestbookEntry _entry = new GuestbookEntry();
   

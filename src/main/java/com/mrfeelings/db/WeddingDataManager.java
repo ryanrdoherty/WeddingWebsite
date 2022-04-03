@@ -20,8 +20,8 @@ import com.mrfeelings.db.entities.PageStat;
 import com.mrfeelings.db.entities.User;
 import com.mrfeelings.db.enums.ContentType;
 
-import edu.upenn.bbl.common.db.DbUtil;
-import edu.upenn.bbl.common.jpa.JpaDataManager;
+import org.conical.common.bbl.db.DbUtil;
+import org.conical.common.bbl.jpa.JpaDataManager;
 
 public class WeddingDataManager extends JpaDataManager {
   

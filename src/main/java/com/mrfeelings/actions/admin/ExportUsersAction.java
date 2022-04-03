@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.StringReader;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.mrfeelings.actions.base.WeddingAdminAction;
 import com.mrfeelings.db.ContentRetriever;

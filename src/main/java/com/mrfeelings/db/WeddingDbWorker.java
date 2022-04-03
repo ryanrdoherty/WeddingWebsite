@@ -4,7 +4,7 @@ import com.mrfeelings.db.entities.PageView;
 import com.mrfeelings.db.entities.User;
 import com.mrfeelings.db.enums.Page;
 
-import edu.upenn.bbl.common.jpa.DbWorker;
+import org.conical.common.bbl.jpa.DbWorker;
 
 public abstract class WeddingDbWorker extends DbWorker<WeddingDataManager> {
 

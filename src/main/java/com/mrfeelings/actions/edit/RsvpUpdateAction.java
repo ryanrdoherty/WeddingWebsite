@@ -1,5 +1,8 @@
 package com.mrfeelings.actions.edit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.mrfeelings.Config;
 import com.mrfeelings.MailUtil;
 import com.mrfeelings.Config.PropKey;
@@ -10,6 +13,8 @@ import com.mrfeelings.db.enums.Page;
 import com.mrfeelings.db.enums.RsvpType;
 
 public class RsvpUpdateAction extends WeddingAction {
+
+  private static final Logger LOG = LogManager.getLogger(RsvpUpdateAction.class);
 
   private static final long serialVersionUID = 1L;
 

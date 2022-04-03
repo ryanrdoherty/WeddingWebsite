@@ -2,7 +2,7 @@ package com.mrfeelings;
 
 import java.util.Map;
 
-import edu.upenn.bbl.common.util.PropertyMapLoader;
+import org.conical.common.bbl.util.PropertyMapLoader;
 
 public class Config {
 	

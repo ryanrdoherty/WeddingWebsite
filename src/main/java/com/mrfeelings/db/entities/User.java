@@ -14,10 +14,10 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.mrfeelings.db.enums.RsvpType;
+import org.conical.common.bbl.enums.State;
+import org.conical.common.bbl.jpa.Identifiable;
 
-import edu.upenn.bbl.common.enums.State;
-import edu.upenn.bbl.common.jpa.Identifiable;
+import com.mrfeelings.db.enums.RsvpType;
 
 @Entity
 @Table(name="WEDDING_USER")

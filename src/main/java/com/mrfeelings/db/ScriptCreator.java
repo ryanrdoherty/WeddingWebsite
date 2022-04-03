@@ -7,7 +7,7 @@ import com.mrfeelings.db.entities.PageStat;
 import com.mrfeelings.db.entities.PageView;
 import com.mrfeelings.db.entities.User;
 
-import edu.upenn.bbl.common.jpa.DdlScriptCreator;
+import org.conical.common.bbl.jpa.DdlScriptCreator;
 
 /**
  * SQL Creator for Tables according to JPA/Hibernate annotations.
